@@ -3,11 +3,11 @@ aws_region  = "ap-southeast-1"
 aws_account = "707538076348"
 
 # Network
-aws_vpc_id = "vpc-05e7516e4e1a850d8" # myproject-vpc
+aws_vpc_id = "vpc-05e7516e4e1a850d8"
 
 # Security Groups
 
-# ECS - Cluster
+# ECS Cluster
 aws_ecs_cluster_name = "myproject-ecs"
 
 # IAM Roles
