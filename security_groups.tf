@@ -1,4 +1,4 @@
-# Allow EC2 instances to receive HTTP/HTTPS/SSH traffic IN and any traffic OUT
+# Allow Fargate Containers to receive HTTP/HTTPS/SSH traffic IN and any traffic OUT
 resource "aws_security_group" "sg_for_fargate_containers" {
   name_prefix = "${var.aws_ecs_cluster_name}_sg_for_fargate_containers_"
   description = "Access to the fargate containers from the Internet"

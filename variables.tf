@@ -15,12 +15,15 @@ variable "aws_vpc_id" {
   description = "VPC ID"
 }
 
+# Security Groups
+
 # ECS - Cluster
 variable "aws_ecs_cluster_name" {
   type        = string
   description = "ECS Cluster Name"
 }
 
+# IAM Roles
 variable "ecs_service_role_name" {
   type        = string
   description = "ECS Service Role Name"
