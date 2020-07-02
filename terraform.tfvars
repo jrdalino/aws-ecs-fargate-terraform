@@ -3,7 +3,7 @@ aws_region  = "ap-southeast-1"
 aws_account = "707538076348"
 
 # Network
-aws_vpc_id = "vpc-05e7516e4e1a850d8"
+aws_vpc_id = "vpc-0024570d64ef2882a"
 
 # Security Groups
 

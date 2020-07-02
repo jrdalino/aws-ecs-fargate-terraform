@@ -2,14 +2,20 @@
 resource "aws_ecs_cluster" "this" {
   name = var.aws_ecs_cluster_name
 
+  capacity_providers = ["FARGATE", "FARGATE_SPOT"]
+
+  default_capacity_provider_strategy {
+    capacity_provider = "FARGATE_SPOT"
+    weight            = "100"
+    base              = "1"
+  }  
+
   setting {
-    name = "containerInsights"
+    name  = "containerInsights"
     value = "enabled"
   }
-}
 
-# CloudWatch Log
-resource "aws_cloudwatch_log_group" "this" {
-  name              = "/aws/ecs/${var.aws_ecs_cluster_name}/cluster"
-  retention_in_days = 7
+  depends_on = [
+    aws_cloudwatch_log_group.this,
+  ]
 }

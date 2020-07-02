@@ -17,7 +17,7 @@ variable "aws_vpc_id" {
 
 # Security Groups
 
-# ECS - Cluster
+# ECS Cluster
 variable "aws_ecs_cluster_name" {
   type        = string
   description = "ECS Cluster Name"
