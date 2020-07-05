@@ -91,23 +91,19 @@ resource "aws_iam_role_policy" "ecs_task_role_policy" {
     "Statement": [
         {
             "Action": [
-                "ecr:GetAuthorizationToken",
-                "ecr:BatchCheckLayerAvailability",
-                "ecr:GetDownloadUrlForLayer",
-                "ecr:BatchGetImage",
-                "logs:CreateLogStream",
-                "logs:CreateLogGroup",
-                "logs:PutLogEvents"
-            ],
-            "Resource": "*",
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:PutItem",
+                "ecr:GetDownloadUrlForLayer",                
                 "dynamodb:Scan",
+                "ecr:GetAuthorizationToken",
                 "dynamodb:Query",
                 "dynamodb:UpdateItem",
-                "dynamodb:GetItem"
+                "logs:CreateLogGroup",
+                "logs:PutLogEvents",
+                "logs:CreateLogStream",
+                "dynamodb:GetItem",
+                "ecr:BatchGetImage",
+                "ecr:BatchCheckLayerAvailability"
             ],
             "Resource": "*",
             "Effect": "Allow"
